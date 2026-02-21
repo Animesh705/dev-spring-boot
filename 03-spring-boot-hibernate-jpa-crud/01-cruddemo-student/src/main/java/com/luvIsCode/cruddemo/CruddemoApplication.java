@@ -19,7 +19,8 @@ public class CruddemoApplication {
 
 		return runner ->{
 			//createStudent(studentDAO);
-			createMultipleStudents(studentDAO);
+			//createMultipleStudents(studentDAO);
+			readStudent(studentDAO);
 		};
 	}
 
@@ -32,7 +33,7 @@ public class CruddemoApplication {
 
 		//save the objects
 		System.out.println("saving the student...");
-		studentDAO.save(tempStudent1	₹);
+		studentDAO.save(tempStudent1);
 		studentDAO.save(tempStudent2);
 		studentDAO.save(tempStudent3);
 	}
