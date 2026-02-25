@@ -19,7 +19,7 @@ public class Student {
             this.firstName = firstName;
         }
         public String getLastName(){
-            return firstName;
+            return lastName;
         }
     public void setLastName(String lastName){
         this.lastName = lastName;

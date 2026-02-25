@@ -1,7 +1,9 @@
 package com.luvIsCode.demo.rest;
 
 import com.luvIsCode.demo.entity.Student;
+import jakarta.annotation.PostConstruct;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,17 +13,31 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class StudentRestController {
+
+    private List<Student> theStudents;
+
+    // define @postconstruct to load the student data .... only once
+    @PostConstruct //->Run this method automatically right after the object is created and ready.
+    public void loadData(){
+
+        theStudents = new ArrayList<>();
+
+        theStudents.add(new Student("Poornima","Patel"));
+        theStudents.add(new Student("Mario","Rossi"));
+        theStudents.add(new Student("Jack","Jones"));
+    }
     //define endpoint for "/students" -return list of student
 
     @GetMapping("/students")
     public List<Student> getStudents(){
 
-        List<Student> theStudents = new ArrayList<>();
-
-        theStudents.add(new Student("Poornima","Patel"));
-        theStudents.add(new Student("Mario","Rossi"));
-        theStudents.add(new Student("Jack","Jones"));
-
         return theStudents;
+    }
+
+    //define endpoints or "/students/{studentId}" - return student at index
+    @GetMapping("/students/{studentId}")
+    public Student getStudent(@PathVariable int studentId){
+        //just index into the list ....
+        return theStudents.get(studentId);
     }
 }
