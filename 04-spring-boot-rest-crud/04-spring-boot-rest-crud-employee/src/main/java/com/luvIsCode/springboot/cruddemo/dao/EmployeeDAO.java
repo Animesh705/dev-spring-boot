@@ -11,4 +11,10 @@ import java.util.List;
 public interface EmployeeDAO {
 
     List<Employee> findAll();
+
+    //adding other methods for full crud support
+    Employee findById(int theId);
+    Employee save(Employee theEmployee);
+    void deleteById(int theId);
+
 }

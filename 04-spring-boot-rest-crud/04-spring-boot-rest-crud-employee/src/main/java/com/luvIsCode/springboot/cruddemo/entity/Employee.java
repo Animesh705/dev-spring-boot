@@ -1,7 +1,6 @@
 package com.luvIsCode.springboot.cruddemo.entity;
 
 import jakarta.persistence.*;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 
 @Entity
 @Table(name="employee")
