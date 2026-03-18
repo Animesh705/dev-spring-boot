@@ -38,7 +38,7 @@ public class DemoSecurityConfig {
         return new InMemoryUserDetailsManager(john,marry,susan);
     }
 
-    //adding role based authority , who can do what 
+    //adding role based authority , who can do what
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(configurer ->
