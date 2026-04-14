@@ -12,7 +12,27 @@
     First name: <input type="text" th:field="*{firstName}"/>
     <br><br>
     Last name: <input type="text" th:field="*{lastName}"/>
+
+
+    <br><br>
+
+    Country :
+    <select th:field="*{country}">
+
+        <!-- instead of hard coding the country name , we added it in our application.properties file , than added it to model and than here
+        <option th:value="Brazil">Brazil</option>
+        <option th:value="India">India</option>
+        <option th:value="uk">united kingdom</option>
+        <option th:value="france">france</option>
+        -->
+<!-- here tempCountry is the temp loop variable for the countries attribute that we added in model ||
+        th:value= is the value that is sent during form submission || th:text= Displayed to the user  -->
+        <option th:each="tempcountry : ${countries}" th:value="${tempcountry}" th:text="${tempcountry}"/>
+
+    </select>
+
     <br><br>
     <input type="submit" value="Submit"/>
+
 </form>
 </body>
