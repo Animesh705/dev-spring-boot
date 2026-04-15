@@ -32,6 +32,20 @@
     </select>
 
     <br><br>
+    Fav. programming lang :
+    <!-- instead of hard codeing these we added them in our apploication.prop files
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="Go">Go
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="c">C
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="JAVA">JAVA
+    <input type="radio" th:field="*{favouriteLanguage}" th:value="C">C++
+    -->
+    <input type="radio" th:field="*{favouriteLanguage}"
+                        th:each="tempLang : ${languages}"
+                        th:value="${tempLang}"
+                        th:text="${tempLang}"/>
+
+    <br><br>
+
     <input type="submit" value="Submit"/>
 
 </form>

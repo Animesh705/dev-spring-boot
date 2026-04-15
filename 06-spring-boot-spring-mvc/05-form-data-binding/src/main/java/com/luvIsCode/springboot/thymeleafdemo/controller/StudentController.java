@@ -17,6 +17,10 @@ public class StudentController {
     @Value("${countries}")
     private List<String> countries;
 
+    //added list of fav prog lang in application.prop instead of hard coding them , favlanguage should match from application.prop
+    @Value("${languages}")
+    private List<String> languages;
+
     //first create a method for actually showing the form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
@@ -26,6 +30,8 @@ public class StudentController {
         theModel.addAttribute("student",theStudent);
       //adding countries name to the model
         theModel.addAttribute("countries",countries);
+        //adding the list of fav prog lang to the model
+        theModel.addAttribute("languages",languages);
 
         return "student-form";
     }

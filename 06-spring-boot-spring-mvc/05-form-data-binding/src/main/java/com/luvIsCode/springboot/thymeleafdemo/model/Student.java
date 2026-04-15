@@ -8,6 +8,18 @@ public class Student {
 
     private String country;
 
+    private String favouriteLanguage;
+
+    public String getFavouriteLanguage() {
+        return favouriteLanguage;
+    }
+
+    public void setFavouriteLanguage(String favouriteLanguage) {
+        this.favouriteLanguage = favouriteLanguage;
+    }
+
+    public Student(String firstName, String lastName, String country, String favouriteLanguage) {}
+
     public String getCountry() {
         return country;
     }
