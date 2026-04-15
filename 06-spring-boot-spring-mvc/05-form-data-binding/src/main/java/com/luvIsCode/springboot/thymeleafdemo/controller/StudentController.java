@@ -21,6 +21,9 @@ public class StudentController {
     @Value("${languages}")
     private List<String> languages;
 
+    @Value("${operating}")
+    private List<String> operating;
+
     //first create a method for actually showing the form
     @GetMapping("/showStudentForm")
     public String showForm(Model theModel){
@@ -32,6 +35,8 @@ public class StudentController {
         theModel.addAttribute("countries",countries);
         //adding the list of fav prog lang to the model
         theModel.addAttribute("languages",languages);
+
+        theModel.addAttribute("operating",operating);
 
         return "student-form";
     }

@@ -32,7 +32,7 @@
     </select>
 
     <br><br>
-    Fav. programming lang :
+    Favourite programming lang :
     <!-- instead of hard codeing these we added them in our apploication.prop files
     <input type="radio" th:field="*{favouriteLanguage}" th:value="Go">Go
     <input type="radio" th:field="*{favouriteLanguage}" th:value="c">C
@@ -43,6 +43,13 @@
                         th:each="tempLang : ${languages}"
                         th:value="${tempLang}"
                         th:text="${tempLang}"/>
+
+    <br><br>
+    Favourite Operating Systems :
+    <input type="checkbox" th:field="*{opSystem}"
+           th:each="tempSystem : ${operating}"
+           th:value="${tempSystem}"
+           th:text="${tempSystem}"/>
 
     <br><br>
 

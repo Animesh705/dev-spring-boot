@@ -15,7 +15,17 @@ Country : <span th:text="${student.country}"></span>
 
 <br><br>
 
-Fav. Prog. Lang. : <span th:text="${student.favouriteLanguage}"></span>
+Fav Programming Lang. : <span th:text="${student.favouriteLanguage}"></span>
+
+<br><br>
+
+Fav Operating System :
+    <!-- <span th:text="${student.opSystem}"> Standard way but,
+    to present the selected os in bullet points -->
+
+    <ul>
+        <li  th:each="tempOperatingSystem : ${student.opSystem}" th:text="${tempOperatingSystem}"/>
+    </ul>
 
 </body>
 </html>

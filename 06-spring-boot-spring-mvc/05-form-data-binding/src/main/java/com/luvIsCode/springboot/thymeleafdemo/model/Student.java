@@ -1,5 +1,7 @@
 package com.luvIsCode.springboot.thymeleafdemo.model;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
@@ -8,11 +10,22 @@ public class Student {
 
     private String country;
 
+    public List<String> getOpSystem() {
+        return opSystem;
+    }
+
+    public void setOpSystem(List<String> opSystem) {
+        this.opSystem = opSystem;
+    }
+
     private String favouriteLanguage;
+
+    private List<String> opSystem;
 
     public String getFavouriteLanguage() {
         return favouriteLanguage;
     }
+
 
     public void setFavouriteLanguage(String favouriteLanguage) {
         this.favouriteLanguage = favouriteLanguage;
