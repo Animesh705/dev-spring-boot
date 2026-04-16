@@ -35,8 +35,13 @@ public class CustomerController {
         public String processForm(
                 @Valid @ModelAttribute("customer") Customer theCustomer,
                 BindingResult theBindingResult){
-        if(theBindingResult.hasErrors()){
+
+        //added these two line to show the exact detail of error in our console
             System.out.println("Last Name : |" + theCustomer.getLastName() +"|");
+            System.out.println("Binding results :" + theBindingResult.toString());
+
+        if(theBindingResult.hasErrors()){
+
             return "customer-form";
         }else{
             return "customer-confirmation";

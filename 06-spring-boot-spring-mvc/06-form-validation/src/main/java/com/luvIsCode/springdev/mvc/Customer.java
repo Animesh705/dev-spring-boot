@@ -12,10 +12,17 @@ public class Customer {
     private String lastName = "";
 
     //we will min and max validation rule for free passes
+    @NotNull(message="is required") // this is required to be filled cant leave null
     @Min(value=0, message="must be greater than 0")
     @Max(value=10, message="must be less than or equal to 10")
-    private int freePass;
+    private Integer freePass; // we used Integer here instead of int ,beacue initBinder works for String and Integer (wrapper class)
 
+    public void setFreePass(Integer freePass) {
+        this.freePass = freePass;
+    }
+    public Integer getFreePass() {
+        return freePass;
+    }
 
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message="only 5 digit/chars")
     private String postalCode;
@@ -27,15 +34,6 @@ public class Customer {
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
-
-    public int getFreePass() {
-        return freePass;
-    }
-
-    public void setFreePass(int freePass) {
-        this.freePass = freePass;
-    }
-
 
 
     public String getFirstName() {
