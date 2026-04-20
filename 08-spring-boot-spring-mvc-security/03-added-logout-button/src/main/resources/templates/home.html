@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <title>luvIsCode Home Page</title>
+</head>
+<body>
+    <h2>LuvIsCode Home Page</h2>
+    <hr>
+Welcome to LuvIsCode!
+<!-- adding logout button to our home page -->
+    <form action="#" th:action="@{/logout}" method="post" >
+        <input type="submit" class="btn btn-primary w-100" value="Logout">
+    </form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5 text-center">
+    <h3>My Custom Login Page :</h3>
+    <form action="#" th:action="@{/authenticateTheUser}" method="post" >
+        <!--check for login error -->
+        <div th:if="${param.error}" class="alert alert-danger">
+            <i>Sorry!! you entered invalid credential.</i>
+        </div>
+        <!--add logout message -->
+        <div th:if="${param.logout}" class="alert alert-info">
+            <i>You have been logged out.</i>
+        </div>
+        <input type="text" name="username" class="form-control mb-3" placeholder="Username">
+        <input type="password" name="password" class="form-control mb-3" placeholder="Password">
+        <button class="btn btn-primary w-100">Login</button>
+    </form>
+</div>
+</body>
+</html>
