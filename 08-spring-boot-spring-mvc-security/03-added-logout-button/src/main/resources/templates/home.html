@@ -8,7 +8,13 @@
 <body>
     <h2>LuvIsCode Home Page</h2>
     <hr>
-Welcome to LuvIsCode!
+Welcome to LuvIsCode <span sec:authentication="principal.username"></span>!
+    <!-- it will display the username and role of the person who loged in-->
+
+    <br>
+    <br>
+    Role:<span sec:authentication="principal.authorities">  </span>
+    <hr>
 <!-- adding logout button to our home page -->
     <form action="#" th:action="@{/logout}" method="post" >
         <input type="submit" class="btn btn-primary w-100" value="Logout">
